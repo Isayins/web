@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            font: 12px "simhei", Arial, Helvetica, sans-serif;
+            color: #666;
+        }
+        div{
+            width: 198px;
+            height: 233px;
+            background-color: #e8e8e8;
+            text-align: center;
+            /*div设置居中
+            所有子元素都会继承下去居中
+            但是块级元素是独占一行,元素的文本内容会受继承的居中影响
+            (元素内容居中了,元素自身没居中)
+
+            行内元素内容受继承的居中影响,并且元素自身受上级元素居中影响后元素本身会居中
+            (元素内容居中了,元素自身也居中了)
+            */
+        }
+        .title_p{
+            margin: 0 0 6px 0;
+        }
+        .price_p{
+            color: #0aa1ed;
+            font-weight: bold;
+            margin: 6px 0;
+        }
+        a{
+            width: 100px;
+            height: 24px;
+            background-color: #0aa1ed;
+            /*行内块受上级元素居中影响, 元素自身会居中 内容也继承了居中*/
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            line-height: 24px;
+            border-radius: 3px;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <img src="http://doc.canglaoshi.org/tstore_v1/images/itemCat/study_computer_img3.png" alt="">
+    <p class="title_p">戴尔(DELL)XPS13-9360-R1609 13.3英寸微边框笔记本电脑</p>
+    <p class="price_p">￥4600.00</p>
+    <a href="">查看详情</a>
+</div>
+</body>
+</html>

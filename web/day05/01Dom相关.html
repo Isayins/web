@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //创建标签
+    let d = document.createElement("div");
+    //给div设置显示文本
+    d.innerText = "我是div";
+    //把div添加到body里面
+    document.body.appendChild(d);
+    //创建h1 和 h2
+    let h1 = document.createElement("h1");
+    let h2 = document.createElement("h2");
+    h1.innerText = "这是h1";
+    h2.innerText = "这是h2";
+    document.body.append(h1,h2);
+    //创建图片并添加
+    let i = document.createElement("img");
+    //给元素设置属性
+    i.src="../b.jpg";
+    //添加到页面中
+    document.body.append(i);
+
+
+
+
+
+
+</script>
+</body>
+</html>

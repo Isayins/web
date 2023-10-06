@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <caption>商品列表</caption>
+    <tr>
+        <th>商品名</th>
+        <th>价格</th>
+        <th>库存</th>
+    </tr>
+</table>
+<script>
+    //定义一个空的Person
+    function Person() {}
+    //实例化Person对象
+    let p1 = new Person();
+    //动态添加属性
+    p1.name = "刘德华";
+    p1.age = 50;
+    //动态添加方法
+    p1.run = function () {
+        console.log(this.name+":"+this.age);
+    }
+    //调用对象的方法
+    p1.run();
+    //定义一个自带属性和方法的对象
+    function Car() {
+        this.name = "宾利";
+        this.price = 500;
+        this.run = function () {
+            console.log(this.name+":"+this.price);
+        }
+    }
+    let c1 = new Car();
+    c1.run();
+
+    //直接实例化空对象的方式
+    let p2 = {};
+    p2.name = "貂蝉";
+    p2.age = 66;
+    p2.run = function () {
+        console.log(this.name+":"+this.age);
+    }
+    p2.run();
+    //直接实例化带属性和方法的对象
+    let p3 = {
+        name:"吕布",
+        age:18,
+        run:function () {
+            console.log(this.name+":"+this.age);
+        }
+    }
+    p3.run();
+
+    // 将商品信息封装到一个对象中, 在数组里面装多个表示商品信息的对象
+    let arr = [{title:"小米手机", price:5000, num:500},
+        {title:"华为电视", price:3000, num:100},
+        {title:"vivo手机", price:4000, num:200},
+        {title:"一加手机", price:2000, num:300}]
+    //得到table对象
+    let table = document.querySelector("table");
+    //遍历数组
+    for (let item of arr) {
+         let tr = document.createElement("tr");
+         let titleTd = document.createElement("td");
+         let priceTd = document.createElement("td");
+         let numTd = document.createElement("td");
+         //给td添加显示的商品信息
+        titleTd.innerText = item.title;
+        priceTd.innerText = item.price;
+        numTd.innerText = item.num;
+        tr.append(titleTd,priceTd,numTd);
+        //把tr装进table
+        table.append(tr);
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*子孙后代选择器*/
+        /*body div div p{
+            color: red;
+        }*/
+        /*子元素选择器*/
+        div>div>p{
+            color: red;
+        }
+        /*伪类选择器*/
+        a:link{color: red;}/*未访问*/
+        a:visited{color: pink}/*访问过*/
+        a:hover{color: green}/*悬停*/
+        a:active{color: yellow}/*点击*/
+    </style>
+</head>
+<body>
+<a href="http://www.tedu.cn">超链接1</a>
+<a href="http://doc.canglaoshi.org">超链接2</a>
+<a href="http://www.qq.com">超链接3</a>
+<p>p1</p>
+<div>
+    <p>p2</p>
+    <div><p>p3</p></div>
+    <div>
+        <p>p4</p>
+        <div><p>p5</p></div>
+    </div>
+</div>
+</body>
+</html>
