@@ -98,7 +98,7 @@ function  toString(a){
 }
 console.log(toString([5,2,3,1]));
 
-
+/*
 // Exercise 8
 function apply(f, a){
     let length = a.length;
@@ -116,3 +116,22 @@ function apply(f, a){
 }
 console.log(apply('square',[3,1,4,5]));
 console.log(apply('addA',["Javascript","Python"]));
+*/
+
+function apply(f, a){
+    let length = a.length;
+    let res=[];
+    function square(){
+        for(let i=0;i<length;i++){
+            res.push(a[i]*a[i]);
+        }
+        function addA(){
+        for(let i=0;i<length;i++){
+           res= res.push(a[i]+'a');
+        }
+    }
+    return res;
+}
+}
+console.log(apply(square,[3,1,4,5]));
+console.log(apply(addA,["Javascript","Python"]));
