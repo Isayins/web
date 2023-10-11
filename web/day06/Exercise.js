@@ -118,20 +118,76 @@ console.log(apply('square',[3,1,4,5]));
 console.log(apply('addA',["Javascript","Python"]));
 */
 
+
+// 1 循环写在主函数上并且新增一个数组对象对每一个对象赋值
 function apply(f, a){
-    let length = a.length;
-    let res=[];
-    function square(){
-        for(let i=0;i<length;i++){
-            res.push(a[i]*a[i]);
-        }
-        function addA(){
-        for(let i=0;i<length;i++){
-           res= res.push(a[i]+'a');
-        }
+    let length=a.length;
+    let res= new Array(length)
+    for(let i=0;i<length;i++){
+        res[i]=f(a[i]);
     }
     return res;
 }
+
+function addA(a){
+
+     return a+'a';
+}
+function square(a){
+
+    return a*a;
+}
+
+// 2 循环写在需要调用的函数上使用数组的push方法生成结果
+function apply(f, a){
+    return f(a);
+    }
+   
+ function square(a){
+    let length = a.length;
+    let res=[];
+    for(let i=0;i<length;i++){
+         res.push(a[i]*a[i]);
+     };
+     return res;
+}
+function addA(a){
+    let length = a.length;
+    let res=[];
+    for(let i=0;i<length;i++){
+        res.push(a[i]+'a');
+    }
+    return res;
 }
 console.log(apply(square,[3,1,4,5]));
 console.log(apply(addA,["Javascript","Python"]));
+
+//3
+// function apply(f, a) {
+
+//     //create a new array anew of length a.length
+//     let anew = new Array(a.length);
+
+//     //fill the array anew such that
+//     // anew[i] = f(a)
+//     for(let i=0; i<a.length; i++) {
+//         anew[i] = f(a[i]);
+//     }
+
+//     return anew;
+
+// }
+// function square(x){
+//     return x*x;
+// }
+
+// function f(x){
+
+//     return x;
+
+// }
+// function addA(s){
+//      return s + 'a';
+// }
+// console.log(apply(square,[3,1,4,5]));
+// console.log(apply(addA,["Javascript","Python"]));
